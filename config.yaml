@@ -1,0 +1,99 @@
+# ClientWorker.js.org
+name: ClientWorker 
+cleaninterval: 1000*20 # 每20秒检测并清理一次缓存
+# ClientWorker热补丁
+hotpatch:
+  - https://unpkg.cnortles.top/clientworker@latest
+# Config热更新
+hotconfig:
+  - https://jsd.onmicrosoft.cn/gh/xlenco/blog@main/source/config.yaml
+catch_rules:
+  # 站点多线路选择
+  - rule: _
+    transform_rules:
+      - search: \#.* #在发送请求时匹配#后内容并移除
+        replace: ''
+      - search: \?.* #在发送请求时匹配?后内容并移除，仅限静态请求
+        replace: '' 
+      - search: _ 
+        replace: 
+          - _
+          - https://npm.onmicrosoft.cn/xlenco-blog-main@1.0.000919
+          - https://npm.elemecdn.com/xlenco-blog-main@1.0.000919
+          - https://jsd.onmicrosoft.cn/npm/xlenco-blog-main@1.0.000919
+          - https://cdn.cbd.int/xlenco-blog-main@1.0.000919
+
+      - search: \.html$
+        header:
+          Content-Type: text/html;charset=UTF-8 #修复标头
+
+      - search: _
+        action: fetch
+        fetch:
+          status: 200
+          engine: parallel
+          preflight: false
+          timeout: 5000
+          cache:
+            expire: 1000*60*60*2
+            delay: 200
+# 静态资源 CDN 选择
+  - rule: ^https\:\/\/((cdn|test1|quantil|fastly|gcore)\.jsdelivr\.net\/npm|unpkg\.com)
+    transform_rules:
+      - search: _
+        replace:
+          - _
+          - https://jsd.onmicrosoft.cn/npm
+          - https://npm.onmicrosoft.cn
+          - https://cdn.cnortles.top/npm
+          - https://unpkg.cnortles.top
+          - https://cdn.cbd.int
+          - https://jsd.cky.codes/npm   
+          - https://npm.elemecdn.com
+          - https://npm.sourcegcdn.com 
+          - https://cdn.bilicdn.tk/npm 
+          - https://cdn.staticfile.org
+          - https://unpkg.zhimg.com
+          - https://cdn.bilicdn.tk/npm
+        action: fetch
+        fetch:
+          status: 200
+          engine: parallel
+          preflight: false # false
+          timeout: 3000
+          cache:
+            expire: 1000*60*60*12 # 缓存8小时
+            delay: 300
+  # github加速
+  - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/gh)
+    transform_rules:
+      - search: _
+        replace:
+          - _
+          - https://jsd.onmicrosoft.cn/gh
+          - https://cdn.cnortles.top/gh
+          - https://fastly.jsdelivr.net/gh
+          - https://gcore.jsdelivr.net/gh
+          - https://cdn.bilicdn.tk/gh
+        action: fetch
+        fetch:
+          status: 200
+          engine: parallel
+          preflight: false # false
+          timeout: 30000
+          cache:
+            expire: 1000*60*60*12 # 缓存8小时
+            delay: 300
+  # 第三方api图片缓存
+  - rule: ^https\:\/\/xlenco\.onmicrosoft\.cn
+    transform_rules:
+      - search: _
+        action: fetch
+        fetch:
+          status: 200
+          engine: fetch
+          preflight: false # false
+          timeout: 50000
+          cache:
+            expire: 1000*60*60*24 # 缓存24小时
+            delay: 300   

@@ -1,0 +1,493 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<script src="/js/clientworker.js"></script>
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>为Hexo添加Github样式代码高亮 | Xlenco</title><meta name="keywords" content="Hexo,Github"><meta name="author" content="Xlenco"><meta name="copyright" content="Xlenco"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言  本教程测试环境为 Vercel    你需要 Github 账号并获取 Personal access tokens，并在 Vercel 中的 Environment Variables 中添加   获取 Github Personal access tokens 具体教程可查看下方文章  点击查看https:&#x2F;&#x2F;xlenco.eu.org&#x2F;posts&#x2F;77e3.html  正文  1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为Hexo添加Github样式代码高亮">
+<meta property="og:url" content="https://xlenco.eu.org/posts/8fce.html">
+<meta property="og:site_name" content="Xlenco">
+<meta property="og:description" content="前言  本教程测试环境为 Vercel    你需要 Github 账号并获取 Personal access tokens，并在 Vercel 中的 Environment Variables 中添加   获取 Github Personal access tokens 具体教程可查看下方文章  点击查看https:&#x2F;&#x2F;xlenco.eu.org&#x2F;posts&#x2F;77e3.html  正文  1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xlenco.onmicrosoft.cn/img/Screenshot_20220903_125917_XPmKbJZQG.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1662185344028">
+<meta property="article:published_time" content="2022-09-03T06:26:00.000Z">
+<meta property="article:modified_time" content="2022-09-03T07:10:00.000Z">
+<meta property="article:author" content="Xlenco">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Github">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xlenco.onmicrosoft.cn/img/Screenshot_20220903_125917_XPmKbJZQG.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1662185344028"><link rel="shortcut icon" href="https://xlenco.onmicrosoft.cn/img/favicon.ico"><link rel="canonical" href="https://xlenco.eu.org/posts/8fce"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"CE9M4IN0HW","apiKey":"1752a7306752d7764efbad19f907367b","indexName":"my-hexo-blog","hits":{"per_page":8},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#5b83f5","bgDark":"#414042","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://jsd.onmicrosoft.cn/npm/flickr-justified-gallery@latest/dist/fjGallery.min.js',
+      css: 'https://jsd.onmicrosoft.cn/npm/flickr-justified-gallery@latest/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '为Hexo添加Github样式代码高亮',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-03 15:10:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link href="https://51.la" rel="preconnect" crossorigin><script defer charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script defer src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script defer src="/js/51la.js"></script><script data-pjax src="https://npm.elemecdn.com/jquery@3.2.1/dist/jquery.min.js"></script><link rel="preload" href="https://at.alicdn.com/t/c/font_3687736_4tduk6kpt8i.css"><meta name="referrer" content="no-referrer"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.min.css" media="defer" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.min.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Xlenco" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="Xlenco" type="application/rss+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img" src="https://xlenco.onmicrosoft.cn/img/head.webp" data-lazy-src="https://xlenco.onmicrosoft.cn/img/head.webp"/></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://xlenco.onmicrosoft.cn/img/head.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/random/"><i class="fa-fw fas fa-shoe-prints"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-bars"></i><span> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://travellings.link/"><i class="fa-fw fas fa-train-subway"></i><span> 开往</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fas fa-user-group"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/essay/"><i class="fa-fw fas fa-comment-dots"></i><span> 即刻短文</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于我</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-cookie-bite"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://yesplaymusic.xlenco.eu.org/"><i class="fa-fw fas fa-music"></i><span> YesPlayMusic</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://mikutap.xlenco.eu.org/"><i class="fa-fw fas fa-gamepad"></i><span> Mikutap</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-screwdriver-wrench"></i><span> Tool</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://uptime.xilej.repl.co/"><i class="fa-fw fas fa-link"></i><span> 监控云台</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://pic.xlenco.eu.org/"><i class="fa-fw fa-solid fa-image"></i><span> Pic Tools</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://xlenco.onmicrosoft.cn/img/Screenshot_20220903_125917_XPmKbJZQG.jpg?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1662185344028')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Xlenco</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> </span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/random/"><i class="fa-fw fas fa-shoe-prints"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-bars"></i><span> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://travellings.link/"><i class="fa-fw fas fa-train-subway"></i><span> 开往</span></a></li><li><a class="site-page child" href="/fcircle/"><i class="fa-fw fas fa-user-group"></i><span> 朋友圈</span></a></li><li><a class="site-page child" href="/essay/"><i class="fa-fw fas fa-comment-dots"></i><span> 即刻短文</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于我</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-cookie-bite"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/album/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://yesplaymusic.xlenco.eu.org/"><i class="fa-fw fas fa-music"></i><span> YesPlayMusic</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://mikutap.xlenco.eu.org/"><i class="fa-fw fas fa-gamepad"></i><span> Mikutap</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-screwdriver-wrench"></i><span> Tool</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://uptime.xilej.repl.co/"><i class="fa-fw fas fa-link"></i><span> 监控云台</span></a></li><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://pic.xlenco.eu.org/"><i class="fa-fw fa-solid fa-image"></i><span> Pic Tools</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">为Hexo添加Github样式代码高亮</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-03T06:26:00.000Z" title="发表于 2022-09-03 14:26:00">2022-09-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-03T07:10:00.000Z" title="更新于 2022-09-03 15:10:00">2022-09-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title="为Hexo添加Github样式代码高亮"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="https://ik.imagekit.io/xlenco/img/Screenshot_20220903_125917_XPmKbJZQG.jpg?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1662185344028" alt="" /></p>
+<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<div class="note danger modern"><ol>
+<li>本教程测试环境为 Vercel</li>
+</ol>
+</div>
+<div class="note danger modern"><ol start="2">
+<li>你需要 Github 账号并获取 Personal access tokens，并在 Vercel 中的 Environment Variables 中添加</li>
+</ol>
+</div>
+<div class="note danger modern"><p>获取 Github Personal access tokens 具体教程可查看下方文章</p>
+</div>
+<div class="tag link"><a class="link-card" title="点击查看" href="https://xlenco.eu.org/posts/77e3.html"><div class="left"><img src="https://xlenco.eu.org/img/head.webp"/></div><div class="right"><p class="text">点击查看</p><p class="url">https://xlenco.eu.org/posts/77e3.html</p></div></a></div>
+<h2 id="正文"><a class="markdownIt-Anchor" href="#正文"></a> 正文</h2>
+<h4 id="1-安装-npm-依赖"><a class="markdownIt-Anchor" href="#1-安装-npm-依赖"></a> 1. 安装 npm 依赖</h4>
+<pre class="language-none"><code class="language-none">npm install crypto  --save
+npm install xmlhttprequest  --save</code></pre>
+<h4 id="2-检查_configyml中writing是否为以下配置"><a class="markdownIt-Anchor" href="#2-检查_configyml中writing是否为以下配置"></a> 2. 检查<code>_config.yml</code>中<code>Writing</code>是否为以下配置</h4>
+<pre class="language-none"><code class="language-none">highlight:
+  enable: false
+  line_number: true
+  auto_detect: true
+  tab_replace: &#39;&#39;
+  wrap: true
+  hljs: true
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: &#39;&#39;</code></pre>
+<p>这里将 highlight 和 prismjs 关闭即可</p>
+<h4 id="3在-blogrootscripts处新建-toolsjs"><a class="markdownIt-Anchor" href="#3在-blogrootscripts处新建-toolsjs"></a> 3.在<code> &#123;blogroot&#125;/scripts</code>处新建 tools.js</h4>
+<pre class="language-none"><code class="language-none">var XMLHttpRequest &#x3D; require(&quot;xmlhttprequest&quot;).XMLHttpRequest;
+const crypto &#x3D; require(&#39;crypto&#39;);
+const &#123; exit &#125; &#x3D; require(&#39;process&#39;);
+const log &#x3D; require(&#39;hexo-log&#39;)(&#123;
+    debug: false,
+    silent: false
+  &#125;)
+&#x2F;&#x2F; 从环境变量里面拿到github token
+const github_token &#x3D; process.env.GITHUB_TOKEN;
+
+&#x2F;&#x2F; 找出来所有的描述
+var pages &#x3D; 1;
+var XMLHttpRequest &#x3D; require(&quot;xmlhttprequest&quot;).XMLHttpRequest;
+const crypto &#x3D; require(&#39;crypto&#39;);
+const &#123; exit &#125; &#x3D; require(&#39;process&#39;);
+const log &#x3D; require(&#39;hexo-log&#39;)(&#123;
+    debug: false,
+    silent: false
+  &#125;)
+&#x2F;&#x2F; 从环境变量里面拿到github token
+const github_token &#x3D; process.env.GITHUB_TOKEN;
+
+&#x2F;&#x2F; 找出来所有的描述
+var pages &#x3D; 1;
+var is_end &#x3D; false;
+var page_list &#x3D; [];
+var id_list &#x3D; [];
+&#x2F;&#x2F; for 循环找出所有gist
+while (!is_end) &#123;
+    &#x2F;&#x2F; 首先获取到全部的gist
+    var request &#x3D; new XMLHttpRequest();
+    log.info(&#96;GIST: 正在查找第$&#123;pages&#125;页&#96;)
+    request.open(&quot;GET&quot;, &quot;https:&#x2F;&#x2F;api.github.com&#x2F;gists?per_page&#x3D;100&quot; + &#96;&amp;page&#x3D;$&#123;pages&#125;&#96;, false);
+    request.setRequestHeader(&quot;Content-Type&quot;, &quot;application&#x2F;json&quot;);
+    request.setRequestHeader(&quot;Authorization&quot;, &quot;token &quot; + github_token);
+    request.send(null);
+    data_json &#x3D; JSON.parse(request.responseText);
+    &#x2F;&#x2F; 如果没有gist就结束
+    if (data_json.length &#x3D;&#x3D; 0) &#123;
+        is_end &#x3D; true;
+        break;
+    &#125; else &#123;
+        &#x2F;&#x2F; 如果有gist就把gist加入到page_list
+        data_json.forEach(element &#x3D;&gt; &#123;
+            page_list.push(element[&quot;description&quot;]);
+            id_list.push(element[&quot;id&quot;]);
+        &#125;);
+        pages &#x3D; pages + 1;
+    &#125;
+&#125;
+
+&#x2F;&#x2F; scripts&#x2F;plantuml.js
+const rBacktick &#x3D; &#x2F;^((?:[^\S\r\n]*&gt;)&#123;0,3&#125;[^\S\r\n]*)(&#96;&#123;3,&#125;|~&#123;3,&#125;)[^\S\r\n]*((?:.*?[^&#96;\s])?)[^\S\r\n]*\n((?:[\s\S]*?\n)?)(?:(?:[^\S\r\n]*&gt;)&#123;0,3&#125;[^\S\r\n]*)\2[^\S\r\n]?(\n+|$)&#x2F;gm;
+&#x2F;&#x2F; 另一种正则：&#96;&#96;&#96;(\w+?\n)([\s\S]+?)&#96;&#96;&#96;
+
+hexo.extend.filter.register(&#39;before_post_render&#39;, function (data) &#123;
+    const dataContent &#x3D; data.content;
+    if ((!dataContent.includes(&#39;&#96;&#96;&#96;&#39;) &amp;&amp; !dataContent.includes(&#39;~~~&#39;))) return;
+
+    data.content &#x3D; dataContent.replace(rBacktick, (match, start, $2, _args, _content, end) &#x3D;&gt; &#123;
+        let gh_content &#x3D; _content
+            .replace(&#x2F;\n$&#x2F;, &#39;&#39;)
+            .replace(&#x2F;^&gt;\s&#x2F;mg, &#39;&#39;);
+        &#x2F;&#x2F; 如果有 _args 就用 _args 如果没有就默认为js
+        let lang &#x3D; _args ? _args : &#39;js&#39;;
+        lang_list &#x3D; &#123;
+            &quot;javascript&quot;: &quot;js&quot;,
+            &quot;python&quot;: &quot;py&quot;,
+            &quot;SQL&quot;: &quot;sql&quot;,
+            &quot;Python&quot;: &quot;py&quot;,
+            &quot;JavaScript&quot;: &quot;js&quot;,
+            &quot;Javascript&quot;: &quot;js&quot;,
+            &quot;html&quot;: &quot;html&quot;,
+            &quot;HTML&quot;: &quot;html&quot;,
+        &#125;
+        lang &#x3D; lang_list[lang] ? lang_list[lang] : lang;
+        const hash &#x3D; crypto.createHash(&#39;md5&#39;);
+        hash.update(gh_content, &#39;utf8&#39;);
+        const md5 &#x3D; hash.digest(&#39;hex&#39;);
+        process.stdout.write(&quot;INFO  |--MD5--|&quot; + md5 + &quot;|----|&quot;);
+        if (page_list.includes(md5)) &#123;
+            &#x2F;&#x2F; 找到是第几个元素
+            let index &#x3D; page_list.indexOf(md5);
+            &#x2F;&#x2F; 找到对应的id
+            var id &#x3D; id_list[index];
+        &#125;else&#123;
+            &#x2F;&#x2F; 如果没有找到就新建一个gist
+            console.log(&quot;该gist不存在，新建一个gist&quot;);
+            console.log(gh_content);
+            console.log(&#39;-------------&#39;)
+            var id &#x3D; createGist(md5, gh_content, lang);
+            console.log(&quot;新建gist，id：&quot; + id);
+        &#125;
+        console.log(&#39;\x1B[32m&#39;, &quot;|--ID--|&quot; + id + &quot;|----|&quot;)
+        &#x2F;&#x2F; &#x2F;&#x2F; 查看这个gist的嵌入代码
+        &#x2F;&#x2F; var request &#x3D; new XMLHttpRequest();
+        &#x2F;&#x2F; let gist_url &#x3D; &quot;https:&#x2F;&#x2F;gist.github.com&#x2F;zkeq&#x2F;&quot; + id + &quot;.js&quot;
+        &#x2F;&#x2F; console.log(gist_url);
+        &#x2F;&#x2F; request.open(&quot;GET&quot;, gist_url, false);
+        &#x2F;&#x2F; request.send();
+        &#x2F;&#x2F; let gist_code &#x3D; request.responseText;
+        &#x2F;&#x2F; str &#x3D; &quot;&lt;script&gt;&quot; + gist_code + &quot;&lt;&#x2F;script&gt;&quot;;
+            &#x2F;&#x2F; iframe_ele &#x3D; document.createElement(&#39;iframe&#39;);
+            &#x2F;&#x2F; iframe_ele.style &#x3D; &quot;border:none;width:100%;max-height:50vh&quot;;
+            &#x2F;&#x2F; iframe_ele.setAttribute(&quot;onload&quot;, &quot;javascript:this.style.height&#x3D;&#96;$&#123;this.contentWindow.document.body.offsetHeight&#125;px&#96;;this.contentWindow.document.getElementsByClassName(&#39;gist-data&#39;)[0].style.height&#x3D;&#96;$&#123;this.clientHeight-65&#125;px&#96;;&quot;)
+            &#x2F;&#x2F; iframe_ele.setAttribute(&quot;srcdoc&quot;, &#96;&lt;head&gt;&lt;base target&#x3D;&#39;_blank&#39;&#x2F;&gt;&lt;&#x2F;head&gt;&lt;body&gt;&lt;script src&#x3D;&#39;https:&#x2F;&#x2F;gist.github.com&#x2F;zkeq&#x2F;$&#123;id&#125;.js&#39;&gt;&lt;&#x2F;script&gt;&lt;&#x2F;body&gt;&#96;)
+        return &#96;
+
+&lt;iframe
+style&#x3D;&quot;border:none;width:100%;;max-height:66vh;&quot;
+onload&#x3D;&quot;javascript:this.style.height&#x3D;\&#96;\$&#123;this.contentWindow.document.body.offsetHeight+20&#125;px\&#96;;this.contentWindow.document.getElementsByClassName(&#39;gist-data&#39;)[0].style.height&#x3D;\&#96;\$&#123;this.clientHeight-55&#125;px\&#96;;&quot;
+srcdoc&#x3D;&#39;&lt;meta name&#x3D;&quot;description&quot; content&#x3D;&quot;Instantly share code, notes, and snippets. You can&#39;t perform that action at this time. You signed in with another tab or window. You signed out in another tab or window. Reload to refresh your session. Reload to refresh your session.&quot;&gt;&lt;meta http-equiv&#x3D;&quot;Content-Type&quot; content&#x3D;&quot;text&#x2F;html; charset&#x3D;utf-8&quot;&gt;&lt;meta name&#x3D;&quot;twitter:widgets:csp&quot; content&#x3D;&quot;on&quot;&gt;&lt;meta name&#x3D;&quot;robots&quot; content&#x3D;&quot;noindex&quot;&gt;&lt;base target&#x3D;&quot;_blank&quot;&gt;&lt;style&gt;body &#123;text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: &quot;ff-tisa-web-pro&quot;, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;&#125;iframe &#123;max-width: 100%;&#125;&lt;&#x2F;style&gt;&lt;&#x2F;head&gt;&lt;body&gt;&lt;style&gt;.gist .gist-file &#123; margin-bottom: 0 !important; &#125;.gist &#123; text-rendering: auto; &#125;.gist-meta a:nth-child(2) &#123;display: none;&#125; html &#123;overflow: hidden;text-overflow: ellipsis;display: inline-block;&#125; * &#123;margin: 0&#125;&lt;&#x2F;style&gt;&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;gist.onmicrosoft.cn&#x2F;zkeq&#x2F;$&#123;id&#125;.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;&lt;script&gt;var height &#x3D; -1; var delayMs &#x3D; 200; if (document) &#123;document.domain &#x3D; document.domain;&#125;function notifyResize(height) &#123;height &#x3D; height ? height : document.documentElement.offsetHeight; var resized &#x3D; false; if (window.donkey &amp;&amp; donkey.resize) &#123;donkey.resize(height);var elements &#x3D; document.getElementsByClassName(&quot;gist-data&quot;); for (var i &#x3D; 0; i &lt; elements.length; i++) &#123;elements[i].style.overflow &#x3D; &quot;visible&quot;&#125;resized &#x3D; true;&#125;if (parent &amp;&amp; parent._resizeIframe) &#123;var obj &#x3D; &#123;iframe: window.frameElement, height: height&#125;; parent._resizeIframe(obj); resized &#x3D; true;&#125;if (window.location &amp;&amp; window.location.hash &#x3D;&#x3D;&#x3D; &quot;#amp&#x3D;1&quot; &amp;&amp; window.parent &amp;&amp; window.parent.postMessage) &#123;window.parent.postMessage(&#123;sentinel: &quot;amp&quot;, type: &quot;embed-size&quot;, height: height&#125;, &quot;*&quot;);&#125;if (window.webkit &amp;&amp; window.webkit.messageHandlers &amp;&amp; window.webkit.messageHandlers.resize) &#123;window.webkit.messageHandlers.resize.postMessage(height); resized &#x3D; true;&#125;return resized;&#125;function maybeResize() &#123;try &#123;if (document.documentElement.offsetHeight !&#x3D; height &amp;&amp; notifyResize()) &#123;height &#x3D; document.documentElement.offsetHeight;&#125;delayMs &#x3D; Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);&#125; catch(error) &#123;console.log(&quot;maybeResize error: &quot;, error)&#125;&#125;maybeResize();&lt;&#x2F;script&gt;&#39;
+&gt;
+&lt;&#x2F;iframe&gt;
+
+&#96;;
+    &#125;);
+&#125;, 9);
+
+function createGist (md5, gh_content, lang)&#123;
+    let response &#x3D; &#39;&#39;
+    let requestData &#x3D; &#123;
+        &quot;description&quot;: md5,
+        &quot;public&quot;: false,
+        &quot;files&quot;: &#123;
+            [md5 + &quot;.&quot; + lang]: &#123;
+                &quot;content&quot;: gh_content
+            &#125;
+        &#125;
+    &#125;;
+    var request &#x3D; new XMLHttpRequest();
+    &#x2F;&#x2F; POST
+    request.open(&quot;POST&quot;, &quot;https:&#x2F;&#x2F;api.github.com&#x2F;gists&quot;, false);
+    request.setRequestHeader(&quot;Content-Type&quot;, &quot;application&#x2F;json&quot;);
+    request.setRequestHeader(&quot;Authorization&quot;, &quot;token &quot; + github_token);
+    request.send(JSON.stringify(requestData));
+    response &#x3D; request.responseText;
+    &#x2F;&#x2F; 如果状态码不是200就报错
+    if (request.status !&#x3D; 201) &#123;
+        return createGist(md5, gh_content, lang);
+    &#125;
+    return JSON.parse(response)[&quot;id&quot;];
+&#125;
+</code></pre>
+<div class="note warning modern"><p>将上文内容中的 zkeq 改为你的 Github 用户名即可</p>
+</div>
+<h4 id="4-在-vercel-的-environment-variables-中添加变量"><a class="markdownIt-Anchor" href="#4-在-vercel-的-environment-variables-中添加变量"></a> 4. 在 Vercel 的 Environment Variables 中添加变量</h4>
+<table>
+<thead>
+<tr>
+<th>VALUE</th>
+<th>NAME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GITHUB_TOKEN</td>
+<td>这里写你 GITHUB_TOKEN 的内容</td>
+</tr>
+</tbody>
+</table>
+<div class="note info modern"><p>第一次部署可能速度较慢，请耐心等待</p>
+</div>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>为Hexo添加Github样式代码高亮</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://xlenco.eu.org/posts/8fce.html">https://xlenco.eu.org/posts/8fce.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a" style="display: inline-block;width: 120px"><h>作者</h><div class="post-copyright-cc-info"><h>Xlenco</h></div></div><div class="post-copyright-c" style="display: inline-block;width: 120px"><h>发布于</h><div class="post-copyright-cc-info"><h>2022-09-03</h></div></div><div class="post-copyright-u" style="display: inline-block;width: 120px"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-09-03</h></div></div><div class="post-copyright-c" style="display: inline-block;width: 120px"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener external nofollow noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener external nofollow noreferrer" target="_blank" title="CC BY 4.0" href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/Github/">Github</a></div><div class="post_share"><div class="social-share" data-image="https://xlenco.onmicrosoft.cn/img/Screenshot_20220903_125917_XPmKbJZQG.jpg?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1662185344028" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/butterfly-extsrc@latest/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://jsd.onmicrosoft.cn/npm/butterfly-extsrc@latest/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://afdian.net/@xlenco" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="/img/afdian.jpg" alt="afdian"/></a><div class="post-qr-code-desc">afdian</div></li><li class="reward-item"><a href="/img/qq.png" target="_blank"><img class="post-qr-code-img" src="/img/qq.png" alt="qq"/></a><div class="post-qr-code-desc">qq</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/c9b3.html"><img class="prev-cover" src="https://xlenco.onmicrosoft.cn/img/8840187_u6Y8xVR1j.jpg?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1661609019485" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Yuque-hexo：实现hexo＋ 语雀 云端富文本写作</div></div></a></div><div class="next-post pull-right"><a href="/posts/f1c2.html"><img class="next-cover" src="https://xlenco.onmicrosoft.cn/Wallpaper/th.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Butterfly主题添加51la统计和灵雀应用监控</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/f1c2.html" title="Butterfly主题添加51la统计和灵雀应用监控"><img class="cover" src="https://xlenco.onmicrosoft.cn/Wallpaper/th.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-03</div><div class="title">Butterfly主题添加51la统计和灵雀应用监控</div></div></a></div><div><a href="/posts/5b4d.html" title="Hexo｜博客搭建指南"><img class="cover" src="https://xlenco.onmicrosoft.cn/img/20200715201402.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1663987678157" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-28</div><div class="title">Hexo｜博客搭建指南</div></div></a></div><div><a href="/posts/c9b3.html" title="Yuque-hexo：实现hexo＋ 语雀 云端富文本写作"><img class="cover" src="https://xlenco.onmicrosoft.cn/img/8840187_u6Y8xVR1j.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1661609019485" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-09</div><div class="title">Yuque-hexo：实现hexo＋ 语雀 云端富文本写作</div></div></a></div><div><a href="/posts/77e3.html" title="利用Github Actions自动化部署你Hexo博客"><img class="cover" src="https://xlenco.onmicrosoft.cn/img/7bf185e5.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1670556758388'" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-25</div><div class="title">利用Github Actions自动化部署你Hexo博客</div></div></a></div><div><a href="/posts/769f.html" title="为你的Butterfly添加顶部加载进度条"><img class="cover" src="https://xlenco.onmicrosoft.cn/img/j3m8y5.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-07</div><div class="title">为你的Butterfly添加顶部加载进度条</div></div></a></div><div><a href="/posts/bdfd.html" title="给博客添加哇酷哇酷的阿尼亚鼠标指针"><img class="cover" src="https://ik.imagekit.io/nicexl/img/d7b219eca0a1dcc8b4d961cf96d3db876bb9b560_nmIj68YVP.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1660653715457" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-15</div><div class="title">给博客添加哇酷哇酷的阿尼亚鼠标指针</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://xlenco.onmicrosoft.cn/img/head.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Xlenco</div><div class="author-info__description">分享互联网各种知识,建站经验...</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xlenco"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xlenco" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xlenco@hotmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa-solid fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">2.</span> <span class="toc-text"> 正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-npm-%E4%BE%9D%E8%B5%96"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 1. 安装 npm 依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%A3%80%E6%9F%A5_configyml%E4%B8%ADwriting%E6%98%AF%E5%90%A6%E4%B8%BA%E4%BB%A5%E4%B8%8B%E9%85%8D%E7%BD%AE"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 2. 检查_config.yml中Writing是否为以下配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E5%9C%A8-blogrootscripts%E5%A4%84%E6%96%B0%E5%BB%BA-toolsjs"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 3.在 {blogroot}&#x2F;scripts处新建 tools.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%9C%A8-vercel-%E7%9A%84-environment-variables-%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%8F%98%E9%87%8F"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 4. 在 Vercel 的 Environment Variables 中添加变量</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/aea8.html" title="解决 PDF.js 出现 file origin does not match viewer's 的解决方法"><img src="https://xlenco.onmicrosoft.cn/img/PDF-js.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决 PDF.js 出现 file origin does not match viewer's 的解决方法"/></a><div class="content"><a class="title" href="/posts/aea8.html" title="解决 PDF.js 出现 file origin does not match viewer's 的解决方法">解决 PDF.js 出现 file origin does not match viewer's 的解决方法</a><time datetime="2022-12-09T02:18:00.000Z" title="发表于 2022-12-09 10:18:00">2022-12-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3eeb.html" title="Hello World"><img src="https://bing.nsso.eu.org" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/posts/3eeb.html" title="Hello World">Hello World</a><time datetime="2022-12-04T13:45:43.014Z" title="发表于 2022-12-04 21:45:43">2022-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d2e.html" title="双拼语法介绍以及选择"><img src="https://xlenco.onmicrosoft.cn/img/c65c2ec5a7f9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="双拼语法介绍以及选择"/></a><div class="content"><a class="title" href="/posts/d2e.html" title="双拼语法介绍以及选择">双拼语法介绍以及选择</a><time datetime="2022-11-25T06:26:00.000Z" title="发表于 2022-11-25 14:26:00">2022-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/4adb.html" title="阿里云盘福利码分享"><img src="https://xlenco.onmicrosoft.cn/img/883bbcbd511e8c7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云盘福利码分享"/></a><div class="content"><a class="title" href="/posts/4adb.html" title="阿里云盘福利码分享">阿里云盘福利码分享</a><time datetime="2022-10-30T06:26:00.000Z" title="发表于 2022-10-30 14:26:00">2022-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/769f.html" title="为你的Butterfly添加顶部加载进度条"><img src="https://xlenco.onmicrosoft.cn/img/j3m8y5.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为你的Butterfly添加顶部加载进度条"/></a><div class="content"><a class="title" href="/posts/769f.html" title="为你的Butterfly添加顶部加载进度条">为你的Butterfly添加顶部加载进度条</a><time datetime="2022-10-07T10:25:00.000Z" title="发表于 2022-10-07 18:25:00">2022-10-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" href="mailto:1044865083@qq.com" rel="external nofollow noreferrer" title="mail"><i class="iconfont icon-mail"></i></a><a class="deal_link" href="https://qm.qq.com/cgi-bin/qm/qr?k=eHT6b6llnxiiT4IjuaBXvselTBWRK7-b&amp;noverify=0" rel="external nofollow noreferrer" title="qq" target="_blank"><i class="iconfont icon-qq1"> </i></a><img class="footer_mini_logo entered loading" style="border-radius:50%" src="https://xlenco.onmicrosoft.cn/img/head.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><a class="deal_link" href="" title="Telegram" target="_blank"><i class="iconfont icon-telegram"></i></a><a class="deal_link" href="https://github.com/xlenco" rel="external nofollow noreferrer" title="github" target="_blank"><i class="iconfont icon-github1"></i></a></div><div id="Jay-footer"><div class="footer-group"><h3 class="footer-title">直达</h3><div class="footer-links"><a class="footer-item" href="/" target="_blank">我的主页</a><a class="footer-item" href="/music">音乐欣赏</a><a class="footer-item" href="/harbour">心灵港湾</a><a class="footer-item" href="/random">随机文章</a></div></div><div class="footer-group"><h3 class="footer-title">分类</h3><div class="footer-links"><a class="footer-item" href="/categories/📚学习笔记/">学习笔记</a><a class="footer-item" href="/categories/🦋魔改教程/">魔改教程</a><a class="footer-item" href="/categories/🌈算法笔记/">算法笔记</a><a class="footer-item" href="/categories/📙语法教程/">语法教程</a></div></div><div class="footer-group"><h3 class="footer-title">关于</h3><div class="footer-links"><a class="footer-item" href="/about/">关于我</a><a class="footer-item" href="/charts/">博客统计</a><a class="footer-item" href="/archives">文章归档</a><a class="footer-item" href="/update">更新记录</a></div></div><div class="footer-group"><h3 class="footer-title">友链</h3><div class="footer-links" id="friend-links-in-footer"></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/privacy/">隐私协议</a><a class="footer-item" href="/cookies/">Cookie</a><a class="footer-item" href="/cc/">版权协议</a></div></div></div><div id="footer-banner"><div class="footer-banner-links"><div class="footer-banner-left"><div class="footer-banner-left"><div id="footer-banner-tips"></div><script src="https://unpkg.com/typed.js/lib/typed.min.js"></script><script>var typed = new Typed("#footer-banner-tips", {
+  strings: ["念念不忘，必有回响。", "Never forget, there will be echoes."],
+  startDelay: 200,
+  backDelay: 2000,
+  typeSpeed: 100,
+  loop: true,
+  backSpeed: 20
+})
+</script></div></div><div class="footer-banner-right"><a class="footer-banner-link" target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/zh-cn/" title="Hexo">框架</a><a class="footer-banner-link">|</a><a class="footer-banner-link" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly" title="theme">主题</a><a class="footer-banner-link">|</a><a class="footer-banner-link" href="/atom.xml" title="RSS">订阅</a><a class="footer-banner-link">|</a><a class="footer-banner-link" href="/about/" title="about">关于</a><a class="footer-banner-link">|</a><a class="footer-banner-link cc" href="/cc/" title="cc协议"><i class="iconfont icon-cc"></i><span>协议</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();" rel="external nofollow noreferrer"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();" rel="external nofollow noreferrer"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();" rel="external nofollow noreferrer"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://cn.bing.com/search?q=&quot;+window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-magnifying-glass"></i><span>必应搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="./#post-comment"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()" rel="external nofollow noreferrer"><i class="fa fa-arrows-alt"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="/random"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();" rel="external nofollow noreferrer"><i class="fa fa-moon"></i><span>昼夜切换</span><a class="rightMenu-item" href="javascript:rmf.switchReadMode();" rel="external nofollow noreferrer"><i class="fa fa-book"></i><span>阅读模式</span></a></a><a class="rightMenu-item" href="javascript:window.location.href=&quot;/about/&quot;;" rel="external nofollow noreferrer"><i class="fa fa-info-circle"></i><span>版权声明</span></a></div></div><div><script src="/js/utils.js"></script><script src="https://cdn.jsdelivr.net/npm/xlenco-blog-main/js/main.min.js"></script><script src="https://jsd.onmicrosoft.cn/npm/@fancyapps/ui@latest/dist/fancybox.umd.min.js"></script><script src="https://jsd.onmicrosoft.cn/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://jsd.onmicrosoft.cn/npm/node-snackbar@latest/dist/snackbar.min.js"></script><script src="https://jsd.onmicrosoft.cn/npm/algoliasearch@latest/dist/algoliasearch-lite.umd.min.js"></script><script src="https://jsd.onmicrosoft.cn/npm/instantsearch.js@latest/dist/instantsearch.production.min.js"></script><script src="https://cdn.jsdelivr.net/npm/xlenco-blog-main/js/search/algolia.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.nicexl.eu.org',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.nicexl.eu.org',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://jsd.onmicrosoft.cn/npm/twikoo@latest/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script async data-pjax src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><script defer data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus/lib/assets/issues.min.js"></script><canvas id="universe"></canvas><script defer data-pjax src="/js/custom.js"></script><script async data-pjax src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script data-pjax src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax","#web_bg"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><!-- hexo injector body_end start --><script>
+    // 全局变量声明区域
+    var fdata = {
+      apiurl: 'https://fcircle.xlenco.eu.org/',
+      initnumber: 30, //【可选】页面初始化展示文章数量
+      stepnumber: 30, //【可选】每次加载增加的篇数
+      error_img: 'https://npm.elemecdn.com/akilar-candyassets/image/404.gif' //【可选，头像图片加载失败时的默认头像】
+    }
+    //存入本地存储
+    localStorage.setItem("fdatalist",JSON.stringify(fdata))
+    </script>
+    <script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-filter-fcircle-anzhiyu@1.1.2/assets/js/fetch.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-filter-fcircle-anzhiyu@1.1.2/assets/js/random-friends-post.min.js"></script><!-- hexo injector body_end end --></body></html><script>var flinks=["https://www.cxl2020mc.top","https://blog.justlovesmile.top","https://chen-ruo.top","https://www.chuckle.top","https://icodeq.com/","https://akilar.top","https://wzx.is-a.dev/","https://www.ciraos.top","https://zx.js.cool","https://nanaeo.cn","https://www.mrgblog.top","https://bio-w.cn/","https://blog.panghai.top","https://www.chirmyram.top","https://mletter.cn","https://blog.leonus.cn/","https://dddachui.top/","https://www.fomal.cc/","https://sady0.com","https://yisous.xyz","https://www.ttkwsd.top/","https://blog.xsnetw.cf","https://blog.eurkon.com","https://miku-39.love/","https://yswm-m.github.io","https://solitude.eu.org/","https://xlenco.github.io/pikpak/"];function toRandomFlink(){window.open(flinks[Math.floor(Math.random()*flinks.length)]);};</script>

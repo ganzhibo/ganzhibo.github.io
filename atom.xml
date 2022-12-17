@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xlenco</title>
+  <icon>https://xlenco.eu.org/icon.png</icon>
+  <subtitle>互联网中的静谧之地</subtitle>
+  <link href="https://xlenco.eu.org/atom.xml" rel="self"/>
+  
+  <link href="https://xlenco.eu.org/"/>
+  <updated>2022-12-09T02:18:00.000Z</updated>
+  <id>https://xlenco.eu.org/</id>
+  
+  <author>
+    <name>Xlenco</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决 PDF.js 出现 file origin does not match viewer&#39;s 的解决方法</title>
+    <link href="https://xlenco.eu.org/posts/aea8.html"/>
+    <id>https://xlenco.eu.org/posts/aea8.html</id>
+    <published>2022-12-09T02:18:00.000Z</published>
+    <updated>2022-12-09T02:18:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;由于 pdf.js 不支持跨域请求，所以会报错：file origin does not match viewer’s，下面附两种解决方案&lt;/p&gt;
+&lt;h3 id=&quot;方案一&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#方案一&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://xlenco.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="JavaScript" scheme="https://xlenco.eu.org/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://xlenco.eu.org/posts/3eeb.html"/>
+    <id>https://xlenco.eu.org/posts/3eeb.html</id>
+    <published>2022-12-04T13:45:43.014Z</published>
+    <updated>2022-12-17T13:41:33.033Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>双拼语法介绍以及选择</title>
+    <link href="https://xlenco.eu.org/posts/d2e.html"/>
+    <id>https://xlenco.eu.org/posts/d2e.html</id>
+    <published>2022-11-25T06:26:00.000Z</published>
+    <updated>2022-11-25T10:25:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;「双拼」是一种基于拼音的输入方案，相比全拼，有着击键次数少、打字节奏感强的特点，而且简单易学，根据个人经验，一般练习一个月可达到熟练水平，三个月可超过全拼时 20% 的输入速度 （以全拼 60</summary>
+        
+      
+    
+    
+    
+    <category term="杂项" scheme="https://xlenco.eu.org/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云盘福利码分享</title>
+    <link href="https://xlenco.eu.org/posts/4adb.html"/>
+    <id>https://xlenco.eu.org/posts/4adb.html</id>
+    <published>2022-10-30T06:26:00.000Z</published>
+    <updated>2022-10-30T06:26:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://xlenco.eu.org/posts/e8d4.html&quot;&gt;资源合集&lt;/a&gt;&lt;br /&gt;
+&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="杂项" scheme="https://xlenco.eu.org/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>为你的Butterfly添加顶部加载进度条</title>
+    <link href="https://xlenco.eu.org/posts/769f.html"/>
+    <id>https://xlenco.eu.org/posts/769f.html</id>
+    <published>2022-10-07T10:25:00.000Z</published>
+    <updated>2022-10-07T10:32:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;dome&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#dome&quot;&gt;&lt;/a&gt; Dome&lt;/h2&gt;
+&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://xlenco.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Butterfly" scheme="https://xlenco.eu.org/tags/Butterfly/"/>
+    
+    <category term="Hexo" scheme="https://xlenco.eu.org/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔记｜HTML转跳URL实例</title>
+    <link href="https://xlenco.eu.org/posts/77f5.html"/>
+    <id>https://xlenco.eu.org/posts/77f5.html</id>
+    <published>2022-10-07T04:14:00.000Z</published>
+    <updated>2022-10-07T04:14:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#说明&quot;&gt;&lt;/a&gt; 说明&lt;/h3&gt;
+&lt;p&gt;以下是两个可以转跳 URL 的 HTML 实例&lt;/p&gt;
+&lt;h2 id=&quot;html&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://xlenco.eu.org/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="前端" scheme="https://xlenco.eu.org/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="HTML" scheme="https://xlenco.eu.org/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CloudFlare Workers 项目合集</title>
+    <link href="https://xlenco.eu.org/posts/cf-works.html"/>
+    <id>https://xlenco.eu.org/posts/cf-works.html</id>
+    <published>2022-10-03T02:36:00.000Z</published>
+    <updated>2022-10-03T02:36:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;网盘目录&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#网盘目录&quot;&gt;&lt;/a&gt; 网盘目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GoindexGoindex 修改版，支持多盘、搜索、分页加载等功能。&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="杂项" scheme="https://xlenco.eu.org/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="CloudFlare" scheme="https://xlenco.eu.org/tags/CloudFlare/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>这里有上亿开源项目！你却在为如何访问而发愁！</title>
+    <link href="https://xlenco.eu.org/posts/e755.html"/>
+    <id>https://xlenco.eu.org/posts/e755.html</id>
+    <published>2022-09-25T06:01:00.000Z</published>
+    <updated>2022-09-25T06:50:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前言&quot;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;目前 &lt;a href=&quot;http://github.com&quot;&gt;github.com&lt;/a&gt; 在国内 ping</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://xlenco.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Github" scheme="https://xlenco.eu.org/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vercel子域名遭受DNS污染和SNI阻断后的解决方法</title>
+    <link href="https://xlenco.eu.org/posts/b693.html"/>
+    <id>https://xlenco.eu.org/posts/b693.html</id>
+    <published>2022-09-24T13:17:00.000Z</published>
+    <updated>2022-09-24T13:17:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;vercel.app 于 2022 年 8 月再度遭受到了 DNS 污染和 SNI 阻断，中国大陆地区已无法访问。又一个国外良心服务倒下了。&lt;br /&gt;
+&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="杂项" scheme="https://xlenco.eu.org/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>图床方案汇总</title>
+    <link href="https://xlenco.eu.org/posts/7ea9.html"/>
+    <id>https://xlenco.eu.org/posts/7ea9.html</id>
+    <published>2022-09-13T14:02:07.000Z</published>
+    <updated>2022-09-23T12:02:07.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前言&quot;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;目前 MarkDown 作为一种程序员必备的轻量级标记语言，避免了富文本编辑器换平台就要重新排版的繁琐，使我们可以专注于技术的输出，但使用</summary>
+        
+      
+    
+    
+    
+    <category term="杂项" scheme="https://xlenco.eu.org/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机专业英语词汇大全</title>
+    <link href="https://xlenco.eu.org/posts/557e.html"/>
+    <id>https://xlenco.eu.org/posts/557e.html</id>
+    <published>2022-09-11T05:01:00.000Z</published>
+    <updated>2022-09-11T06:29:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;a&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#a&quot;&gt;&lt;/a&gt; Ａ&lt;/h2&gt;
+&lt;p&gt;Active-matrix 主动距陈&lt;br /&gt;
+Adapter cards 适配卡&lt;br /&gt;
+Advanced application</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://xlenco.eu.org/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Yuque-hexo：实现hexo＋ 语雀 云端富文本写作</title>
+    <link href="https://xlenco.eu.org/posts/c9b3.html"/>
+    <id>https://xlenco.eu.org/posts/c9b3.html</id>
+    <published>2022-09-09T14:01:00.000Z</published>
+    <updated>2022-10-24T02:29:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前言&quot;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
+&lt;p&gt;本文转载自冰老师的&lt;a href=&quot;https://zfe.space/post/554e.html&quot;&gt;教程：hexo× 语雀</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://xlenco.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="转载" scheme="https://xlenco.eu.org/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+    <category term="Hexo" scheme="https://xlenco.eu.org/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为Hexo添加Github样式代码高亮</title>
+    <link href="https://xlenco.eu.org/posts/8fce.html"/>
+    <id>https://xlenco.eu.org/posts/8fce.html</id>
+    <published>2022-09-03T06:26:00.000Z</published>
+    <updated>2022-09-03T07:10:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://xlenco.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Hexo" scheme="https://xlenco.eu.org/tags/Hexo/"/>
+    
+    <category term="Github" scheme="https://xlenco.eu.org/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Butterfly主题添加51la统计和灵雀应用监控</title>
+    <link href="https://xlenco.eu.org/posts/f1c2.html"/>
+    <id>https://xlenco.eu.org/posts/f1c2.html</id>
+    <published>2022-09-03T00:08:07.000Z</published>
+    <updated>2022-12-17T13:41:33.031Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前言&quot;&gt;&lt;/a&gt; 前言&lt;/h1&gt;
+&lt;p&gt;因为最近百度统计时常抽风，所以博主切换到了 51la 统计&lt;/p&gt;
+&lt;h1 id=&quot;51la-统计&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="转载" scheme="https://xlenco.eu.org/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+    <category term="Butterfly" scheme="https://xlenco.eu.org/tags/Butterfly/"/>
+    
+    <category term="Hexo" scheme="https://xlenco.eu.org/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用前端公共库CDN</title>
+    <link href="https://xlenco.eu.org/posts/8606.html"/>
+    <id>https://xlenco.eu.org/posts/8606.html</id>
+    <published>2022-08-29T13:13:00.000Z</published>
+    <updated>2022-12-14T10:18:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前沿&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前沿&quot;&gt;&lt;/a&gt; 前沿&lt;/h2&gt;
+&lt;p&gt;静态资源 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://xlenco.eu.org/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CDN" scheme="https://xlenco.eu.org/tags/CDN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo｜博客搭建指南</title>
+    <link href="https://xlenco.eu.org/posts/5b4d.html"/>
+    <id>https://xlenco.eu.org/posts/5b4d.html</id>
+    <published>2022-08-28T08:12:00.000Z</published>
+    <updated>2022-08-28T12:12:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-引言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-引言&quot;&gt;&lt;/a&gt; 1. 引言&lt;/h2&gt;
+&lt;p&gt;不知不觉，我的博客已经在风雨飘摇中运行了一段时间了，我觉得有必要详细记录一下博客搭建的过程，以防我不小心搞崩了博客…&lt;br</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://xlenco.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Hexo" scheme="https://xlenco.eu.org/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用Github Actions自动化部署你Hexo博客</title>
+    <link href="https://xlenco.eu.org/posts/77e3.html"/>
+    <id>https://xlenco.eu.org/posts/77e3.html</id>
+    <published>2022-08-25T14:01:13.000Z</published>
+    <updated>2022-12-09T06:15:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;github-actions-概念&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#github-actions-概念&quot;&gt;&lt;/a&gt; Github Actions 概念&lt;/h3&gt;
+&lt;p&gt;GitHub Actions</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://xlenco.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Hexo" scheme="https://xlenco.eu.org/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>十大高清壁纸站，8K分辨率的都有</title>
+    <link href="https://xlenco.eu.org/posts/a853.html"/>
+    <id>https://xlenco.eu.org/posts/a853.html</id>
+    <published>2022-08-23T00:52:39.000Z</published>
+    <updated>2022-12-17T10:26:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天介绍几个国内外比较好的壁纸下载站，都是提供免费下载，网站壁纸类别都很丰富，值得体验一番。&lt;/p&gt;
+&lt;p&gt;01&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://wall.alphacoders.com&quot;&gt;Wallpaper ABYSS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;壁纸网站</summary>
+        
+      
+    
+    
+    
+    <category term="杂项" scheme="https://xlenco.eu.org/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="壁纸" scheme="https://xlenco.eu.org/tags/%E5%A3%81%E7%BA%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随机访问博客文章</title>
+    <link href="https://xlenco.eu.org/posts/2377.html"/>
+    <id>https://xlenco.eu.org/posts/2377.html</id>
+    <published>2022-08-21T10:13:03.000Z</published>
+    <updated>2022-12-17T10:26:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前沿&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前沿&quot;&gt;&lt;/a&gt; 前沿&lt;/h2&gt;
+&lt;p&gt;此教程是根据 js 实现的随机访问博客文章&lt;/p&gt;
+&lt;p&gt;部署难度：简单&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://xlenco.eu.org/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Hexo" scheme="https://xlenco.eu.org/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git常用命令</title>
+    <link href="https://xlenco.eu.org/posts/1b99.html"/>
+    <id>https://xlenco.eu.org/posts/1b99.html</id>
+    <published>2022-08-18T08:12:26.000Z</published>
+    <updated>2022-08-18T14:07:42.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;仓库&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#仓库&quot;&gt;&lt;/a&gt; 仓库&lt;/h2&gt;
+&lt;pre class=&quot;language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;# 在当前目录新建一个Git代码库
+$</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://xlenco.eu.org/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Git" scheme="https://xlenco.eu.org/tags/Git/"/>
+    
+  </entry>
+  
+</feed>
