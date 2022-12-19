@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gzb.app/posts/3ee2.html</loc>
+    <loc>https://gzb.app/posts/3ee1.html</loc>
     
-    <lastmod>2022-12-18</lastmod>
+    <lastmod>2022-12-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gzb.app/posts/3ee1.html</loc>
+    <loc>https://gzb.app/posts/3ee2.html</loc>
     
     <lastmod>2022-12-18</lastmod>
     
@@ -56,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/css/index.css</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gzb.app/album/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
@@ -74,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/essay/index.html</loc>
+    <loc>https://gzb.app/css/index.css</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -101,16 +92,7 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/people/index.html</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzb.app/link/index.html</loc>
+    <loc>https://gzb.app/essay/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -137,7 +119,16 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/album/nya/index.html</loc>
+    <loc>https://gzb.app/people/index.html</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/link/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -147,6 +138,15 @@
   
   <url>
     <loc>https://gzb.app/album/Erika-Harlacher/index.html</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/album/nya/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
