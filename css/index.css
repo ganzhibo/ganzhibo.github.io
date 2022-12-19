@@ -1399,7 +1399,6 @@
   color: var(--anzhiyu-secondtext);
   white-space: nowrap;
 }
-
 @font-face{
   font-family:'AlibabaPuHuiTi-2-55-Regular' ;  /* 字体名自定义即可 */
   src:url('/fontsdest/AlibabaPuHuiTi-2-55-Regular.ttf'); /* 字体文件路径 */
@@ -1699,7 +1698,14 @@ button#go-up:hover i {
 button#go-up:hover #percent {
 	display:none!important
 }
-
+#rightside>div>a,#rightside>div>button {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:38px;
+	height:38px;
+	font-size:18px
+}
 div#main_top {
 	z-index:1;
 	max-width:1200px;
@@ -1944,6 +1950,14 @@ div#statistic .item a:hover {
 #sta_chart canvas {
 	animation:none
 }
+svg.icon {
+	width:1em;
+	height:1em;
+	vertical-align:-.15em;
+	fill:currentColor;
+	overflow:hidden;
+	font-size:20px
+}
 [data-theme=dark] #universe {
 	display:block;
 	position:fixed;
@@ -1967,6 +1981,12 @@ div#statistic .item a:hover {
 	padding:10px 20px;
 	background-color:transparent;
 	color:var(--font-color)
+}
+.menus_items .menus_item:first-child .menus_item_child,.menus_items .menus_item:last-child .menus_item_child {
+	left:-114px
+}
+.menus_items .menus_item:nth-child(2) .menus_item_child,.menus_items .menus_item:nth-child(3) .menus_item_child {
+	left:-59px
 }
 #recent-posts>.recent-post-item .post-meta-date+span {
 	transition:.3s ease-in-out;
@@ -2234,7 +2254,7 @@ div#statistic .item a:hover {
 	color:#fff;
 	left:38px;
 	top:44px;
-	content:'这是是什么呢？'
+	content:'鑷畾涔夐鑹�'
 }
 .pace {
 	pointer-events:none;
@@ -2400,9 +2420,15 @@ to {
 #statistic .item:last-child .num {
 	font-size:1.5rem
 }
+#travellings {
+	display:none!important
+}
 }@media screen and (min-width:768px) {
 	.twikoo .OwO-item img {
 	width:3rem!important
+}
+#bber-talk .talk-list {
+	text-align:center
 }
 .page #content-inner {
 	max-width:1200px!important
@@ -2455,6 +2481,20 @@ table td,table th {
 #recent-posts>.recent-post-item>.recent-post-info>.article-title {
 	letter-spacing:1px
 }
+#bber-talk .talk-list {
+	flex:1;
+	max-height:30px;
+	font-size:15px;
+	overflow:hidden
+}
+#bber-talk>i {
+	font-size:15px
+}
+#bber-talk,#recent-posts>.recent-post-item .post_cover {
+	border:var(--xlenco-border);
+	box-sizing:border-box;
+	transition:all .3s ease-in-out
+}
 #recent-posts>.recent-post-item .post_cover:hover {
 	border-color:var(--xlenco-blue)!important
 }
@@ -2477,6 +2517,9 @@ table td,table th {
 #recent-posts>.recent-post-item .post_cover {
 	height:180px;
 	border-radius:12px
+}
+#universe {
+	display:none!important
 }
 #sta_chart {
 	padding:20px 0
@@ -2508,6 +2551,10 @@ table td,table th {
 	width:calc(25% - 10px)
 }
 }
+
+
+
+
   
 /* 侧边栏美化 */
 .article-sort {
@@ -4046,6 +4093,19 @@ img.footer_mini_logo:hover {
   border-radius: 20px !important;
 }
 
+/* 顶部样式 */
+.author-content.author-content-item.essayPage {
+  height: 19rem;
+  background: url(https://i.imgtg.com/2022/12/18/HKvxU.webp) left 28% / cover no-repeat;
+  color: var(--anzhiyu-white);
+  overflow: hidden;
+  margin-top: 0px;
+}
+#page:has(#essay_page) .author-content-item .card-content .banner-button-group .banner-button:hover {
+  color: var(--anzhiyu-white);
+  border-radius: 20px !important;
+}
+
 /* 响应式 */
 @media screen and (max-width: 1300px) {
   #bber .timeline ul li.bber-item {
@@ -4158,7 +4218,6 @@ img.footer_mini_logo:hover {
 }
 /*去除iframe 边框*/
 iframe{border: medium none;}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
