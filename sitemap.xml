@@ -38,15 +38,6 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/css/index.css</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gzb.app/package.json</loc>
     
     <lastmod>2022-12-17</lastmod>
@@ -65,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/css/var.css</loc>
+    <loc>https://gzb.app/fcircle/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -83,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/essay/index.html</loc>
+    <loc>https://gzb.app/css/index.css</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -92,7 +83,16 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/fcircle/index.html</loc>
+    <loc>https://gzb.app/css/var.css</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/essay/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/update/index.html</loc>
+    <loc>https://gzb.app/tags/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/album/Erika-Harlacher/index.html</loc>
+    <loc>https://gzb.app/update/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/tags/index.html</loc>
+    <loc>https://gzb.app/album/Erika-Harlacher/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
