@@ -2,45 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gzb.app/posts/3ee4.html</loc>
-    
-    <lastmod>2022-12-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzb.app/posts/3ee5.html</loc>
-    
-    <lastmod>2022-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gzb.app/posts/3ee6.html</loc>
     
-    <lastmod>2022-12-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzb.app/posts/3ee7.html</loc>
-    
-    <lastmod>2022-12-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzb.app/posts/3ee1.html</loc>
-    
-    <lastmod>2022-12-25</lastmod>
+    <lastmod>2022-12-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -49,16 +13,43 @@
   <url>
     <loc>https://gzb.app/posts/3ee8.html</loc>
     
-    <lastmod>2022-12-24</lastmod>
+    <lastmod>2022-12-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gzb.app/posts/3ee2.html</loc>
+    <loc>https://gzb.app/posts/3ee1.html</loc>
     
-    <lastmod>2022-12-23</lastmod>
+    <lastmod>2022-12-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/posts/3ee5.html</loc>
+    
+    <lastmod>2022-12-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/posts/3ee4.html</loc>
+    
+    <lastmod>2022-12-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/posts/3ee7.html</loc>
+    
+    <lastmod>2022-12-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -92,34 +83,7 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/about/index.html</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gzb.app/css/index.css</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzb.app/fcircle/index.html</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzb.app/css/var.css</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -137,6 +101,33 @@
   </url>
   
   <url>
+    <loc>https://gzb.app/about/index.html</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/css/var.css</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/fcircle/index.html</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gzb.app/people/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
@@ -146,25 +137,16 @@
   </url>
   
   <url>
-    <loc>https://gzb.app/link/index.html</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzb.app/tags/index.html</loc>
-    
-    <lastmod>2022-12-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gzb.app/update/index.html</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzb.app/link/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
     
@@ -191,6 +173,15 @@
   </url>
   
   <url>
+    <loc>https://gzb.app/tags/index.html</loc>
+    
+    <lastmod>2022-12-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gzb.app/album/bing/index.html</loc>
     
     <lastmod>2022-12-17</lastmod>
@@ -202,7 +193,7 @@
 
   <url>
     <loc>https://gzb.app/</loc>
-    <lastmod>2022-12-29</lastmod>
+    <lastmod>2022-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
